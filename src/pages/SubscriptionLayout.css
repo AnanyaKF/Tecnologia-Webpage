@@ -1,0 +1,21 @@
+.subscription-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+  }
+  
+  .black-background {
+    background-color: #080808;
+    padding: 20px;
+    width: 100%; 
+  }
+  
+  .subscription-card {
+    max-width: 2400px;
+    margin: 0 auto;
+    background-color: #080808;
+    color: #f5f1f1;
+    border: none;
+  }
+  
