@@ -5,23 +5,28 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
 import PrimaryButton from './PrimaryButtons';
 import DarkButton from './DarkButton';
+import Background from './Background';
+import Grid from './Grid';
+
+
+
 
 
 const NavBar = () => {
   return (
     <div className="App">
-      <Navbar expand="lg" className="bg-body-tertiary">
-        <Container fluid>
-          <Navbar.Brand href="#" className="text-center">
-            <BsChevronLeft />
-            <BsChevronRight className="dark-blue" />
-            <b>Technologia</b>
-          </Navbar.Brand>
+      <Navbar expand="lg" className="bg-white">
+  <Container fluid>
+    <Navbar.Brand href="#" className="text-center">
+      <BsChevronLeft />
+      <BsChevronRight className="dark-blue" />
+      <b>Technologia</b>
+    </Navbar.Brand>
 
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
-            <Nav className="mx-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
-              <NavDropdown title={<span><b>H.</b></span>} id="navbarScrollingDropdown">
+    <Navbar.Toggle aria-controls="navbarScroll" />
+    <Navbar.Collapse id="navbarScroll">
+      <Nav className="mx-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
+      <NavDropdown title={<span><b>H.</b></span>} id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3"> IT services</NavDropdown.Item>
                 <NavDropdown.Item href="#action4">App Development</NavDropdown.Item>
               </NavDropdown>
@@ -41,18 +46,20 @@ const NavBar = () => {
                 <NavDropdown.Item href="#action4">Events</NavDropdown.Item>
                 <NavDropdown.Item href="#action4">FAQ</NavDropdown.Item>
               </NavDropdown>
-            </Nav>
-            <div className="d-flex align-items-center flex-column flex-lg-row">
-              <span className="me-3">
-                <b>Client Support : <FontAwesomeIcon icon={faArrowRight} size="sm" /></b> 123-456-7890
-              </span>
-            </div>
-            <Form className="d-flex">
-              <Button variant="outline-dark"> Contact Us</Button>
-            </Form>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+            
+      </Nav>
+      <div className="d-flex align-items-center flex-column flex-lg-row">
+        <span className="me-3">
+          <b>Client Support : <FontAwesomeIcon icon={faArrowRight} size="sm" /></b> 123-456-7890
+        </span>
+      </div>
+      <Form className="d-flex">
+        <Button variant="outline-dark"> Contact Us</Button>
+      </Form>
+    </Navbar.Collapse>
+  </Container>
+</Navbar>
+
       <hr className="mt-0 my-4" />
       <div className="container">
         <div className="row">
@@ -72,6 +79,9 @@ const NavBar = () => {
           </div>
         </div>
       </div>
+      <Grid/>
+      <Background/>
+
 
     </div>
 
