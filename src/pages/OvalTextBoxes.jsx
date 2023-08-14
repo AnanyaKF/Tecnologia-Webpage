@@ -1,8 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './SideBySideOvalTextBoxes.css';
+import './OvalTextBoxes.css';
 
-function SideBySideOvalTextBoxes() {
+function OvalTextBoxes() {
   return (
     <div className="container my-5">
       <div className="side-by-side-oval-text-boxes">
@@ -97,4 +97,4 @@ function SideBySideOvalTextBoxes() {
   );
 }
 
-export default SideBySideOvalTextBoxes;
+export default OvalTextBoxes;

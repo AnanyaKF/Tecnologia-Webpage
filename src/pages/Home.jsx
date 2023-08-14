@@ -7,14 +7,16 @@ import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
-import PrimaryButton from './PrimaryButton';
-import './SideBySideOvalTextBoxes.css';
-import SideBySideOvalTextBoxes from './SideBySideOvalTextBoxes';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import ImageCarousel from './ImageCarousel';
-import ReviewComponent from './ReviewComponent';
 import { Form, Button,  } from 'react-bootstrap';
 import {  Table } from 'react-bootstrap';
+import { Carousel } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import OvalTextBoxes from './OvalTextBoxes';
+import './OvalTextBoxes.css';
+
+
+
 
 
 
@@ -22,6 +24,41 @@ import {  Table } from 'react-bootstrap';
 
 
 const MyComponent = () => {
+  const ovalImageStyle = {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+  };
+  
+  const textBoxStyle = {
+    flex: 1,
+  };
+  
+  const headingStyle = {
+    marginBottom: '5px',
+    fontSize: '14px',
+  };
+  
+  const paragraphStyle = {
+    margin: '0',
+    fontSize: '12px',
+  };
+    const yellowStarIcon = <FontAwesomeIcon icon={faStar} style={{ color: 'yellow' }} />;
+  
+    const renderStarIcons = (count) => {
+      return Array.from({ length: count }, (_, index) => (
+        <FontAwesomeIcon key={index} icon={faStar} style={{ color: 'yellow' }} />
+      ));
+    };
+
+    const lightBlueGradientBackground = {
+      background: 'linear-gradient(to bottom, #b3e0f2, #66a3d2)',
+      padding: '50px',
+      paddingTop:'50px'
+    };
+  
+  
+  
   const cardStyle = {
     background: 'linear-gradient(to bottom, black, #1a1a1a)',
     color: 'white',
@@ -85,14 +122,17 @@ const MyComponent = () => {
 
     <h5  style={{color:'darkblue',fontFamily: 'serif' , }}><b>About Technologies</b></h5>
 
-    <h1 style={{paddingTop:'20px'}}>Solutions</h1>
+    
 
-    <div className="p-3 bg-blue elementor-heading-title elementor-size-default">
+    
+    <div style={lightBlueGradientBackground}>
+
+    <div>
       HOW WE DO
     </div>
+    <h1 style={{ paddingTop:'10px',paddingBottom:'10px' }} >Solutions</h1>
 
-    
-    
+
     <CardGroup style={{ marginBottom: '20px' }}>
   <Card>
     <Card.Img variant="top" src="ManagedServices.jpeg" style={{ width: '100px', height: '100px' }} />
@@ -146,7 +186,7 @@ const MyComponent = () => {
     </Card.Footer>
   </Card>
   <Card>
-    <Card.Img variant="top" src="mobilexevelop.webp" style={{ width: '90px', height: '90px' }} />
+    <Card.Img variant="top" src="mobilexevelop.webp" style={{ width: '120px', height: '90px' }} />
     <Card.Body>
       <Card.Title>Mobile Development</Card.Title>
       <Card.Text>
@@ -158,7 +198,7 @@ const MyComponent = () => {
     </Card.Footer>
   </Card>
   <Card>
-    <Card.Img variant="top" src="cloudservices.png" style={{ width: '90px', height: '90px' }} />
+    <Card.Img variant="top" src="cloudservices.png" style={{ width: '110px', height: '90px' }} />
     <Card.Body>
       <Card.Title>Cloud Services</Card.Title>
       <Card.Text>
@@ -170,9 +210,17 @@ const MyComponent = () => {
     </Card.Footer>
   </Card>
 </CardGroup>
-    <PrimaryButton/>
-    <h1 style={{paddingTop:'50px'}}>Solving IT challenges in every industry, every day.</h1>
-    <SideBySideOvalTextBoxes/>
+</div>
+
+<div className="text-center" style={{ paddingTop:'20px', }}>
+      <button className="btn btn-primary">View all solutions</button>
+</div>   
+
+
+    <h1 style={{paddingTop:'50px',paddingLeft:'20px'}}>Solving IT challenges in every industry, every day.</h1>
+     
+
+    <OvalTextBoxes/>
 
     <h5  style={{color:'darkblue',fontFamily: 'serif' ,textAlign:'center', }}><b><u>View all Industries</u></b></h5>
     <div className="p-3">
@@ -217,6 +265,7 @@ const MyComponent = () => {
       WHAT WE DO
     </div>
     <h1 style={{paddingLeft:'30px'}}>SUCCESS STORIES</h1>
+
     <CardGroup style={{ marginBottom: '20px' }}>
   <Card>
     <Card.Img variant="top" src="UH.png" style={{ width: '100px', height: '100px' }} />
@@ -260,11 +309,81 @@ const MyComponent = () => {
 
 
 
+
     
-    <ImageCarousel />
+<Carousel>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="lb.jpg"
+          alt="First slide"
+          style={{ maxWidth: '500%', maxHeight: '300px' }}
+
+        />
+        <Carousel.Caption>
+          <h3  style={{ color:'darkblue' }}>Tecnologia implemented such a poweful platform that we had no break in service when our employees had to work from home due to covid-19  pandemic. we aren't concerned about how to shift to a remote working environment because integris facilitated a seamless transition</h3>
+          <h5  style={{ color:'darkblue' }}>Amanda Parks</h5>
+          <p>Network manager,Healthcare organisation</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="lb.jpg"
+          alt="Second slide"
+          style={{ maxWidth: '500%', maxHeight: '300px' }}
+
+        />
+        <Carousel.Caption>
+          <h3 style={{ color:'darkblue' }}>Tecnologia has been a outstanding partner. There team is professional,knowledgeable and customer-service driven. Tecnologia proactive collabrative approach has been critical in helping us build an IT infrastructure that enables our SUCCESS today and supports our long term positioning stategy</h3>
+          <h5  style={{ color:'darkblue' }}>John Labkins</h5>
+          <p>Partner,CEO & Telecommunication company</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="lb.jpg"
+          alt="Second slide"
+          style={{ maxWidth: '500%', maxHeight: '300px' }}
+
+        />
+        <Carousel.Caption>
+          <h3 style={{ color:'darkblue' }}>I have been a customer for more than a decade. Tecnologia is an example of the way managed services should be done. They do their very best to make sure you suceed. If thers an issue, they step in immediately</h3>
+          <h5  style={{ color:'darkblue' }}>Daniel Legrante</h5>
+          <p>CEO,Restaurant Product Supplier</p>
+
+        </Carousel.Caption>
+
+
+      </Carousel.Item>
+      
+    </Carousel>
+
+    <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+      <div >
+        <h6>
+          REVIEWED ON <br />
+          {renderStarIcons(5)}
+          <br />
+          <h6>Clutch</h6>
+          31 REVIEWS
+        </h6>
+      </div>
+      <img src='gi.png' style={{ width: '80px', height: '60px' }} ></img>
+
+      <div >
+        <h6>
+          4.9 <br />
+          {renderStarIcons(5)}
+          <br />
+          <h6>GOOGLE</h6>
+          CUSTOMER REVIEWS
+        </h6>
+      </div>
+    </div>
     
     
-    <ReviewComponent/>
     <h1 style={{paddingTop:'50px',paddingLeft:'30px'}}>Consultation Form</h1>
 
 
